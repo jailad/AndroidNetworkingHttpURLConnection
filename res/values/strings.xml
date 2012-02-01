@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    
+    <string name="hello">MyIndore !</string>
+    <string name="app_name">MyIndore</string>
+    <string name="app_description">Jai Lad</string>
+        
+    <string name="author_name">Jai Lad</string>
+    <string name="company_name">Jai Lad</string>
+    <string name="company_desc">Jai Lad</string>
+    <string name="company_url">Jai Lad</string>
+    <string name="support_email">Jai Lad</string>
+        
+    <string name="privacy_policy">BLah Blah Blah, mention about the libraries that are being used, and the privacy implications of the same. Especially, Google Analytics, ACRA etc.</string>
+        
+</resources>
