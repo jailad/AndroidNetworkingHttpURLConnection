@@ -19,6 +19,10 @@ import com.thejspace.www.uiframework.BaseActivity;
 
 public class NetworkingActivity extends BaseActivity {
 	
+	private static final String KUSERAGENT = "CUSTOM USER AGENT";
+	private static final String KTARGETURL = "http://jldev.tumblr.com";
+	private static final String KLOGTAG = "NetworkingActivity.java";
+	private static final String KMIMETYPE = "text/html";
 	
     /** Called when the activity is first created. */
     @Override
@@ -29,7 +33,7 @@ public class NetworkingActivity extends BaseActivity {
 		WebView webView = (WebView) findViewById(R.id.webView1);
 		webView.setWebViewClient(new MyWebViewClient());
 		webView.getSettings().setJavaScriptEnabled(true);
-		webView.getSettings().setUserAgentString("CUSTOM USER AGENT");
+		webView.getSettings().setUserAgentString(KUSERAGENT);
         
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -37,7 +41,7 @@ public class NetworkingActivity extends BaseActivity {
         // Did not work due to readStream method not being found
         URL url;
 		try {
-			url = new URL("http://jldev.tumblr.com");
+			url = new URL(KTARGETURL);
 			
 		       HttpURLConnection urlConnection;
 				try {
@@ -47,8 +51,8 @@ public class NetworkingActivity extends BaseActivity {
 			        {
 			        	InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 			            String x = readStream(in);
-			            Log.d("NetworkingActivityData", x);
-			            webView.loadData(x, "text/html", null);
+			            Log.d(KLOGTAG, x);
+			            webView.loadData(x, KMIMETYPE, null);
 			        }
 			        finally{urlConnection.disconnect();}
 					
@@ -79,7 +83,6 @@ public class NetworkingActivity extends BaseActivity {
      * readStream method - used in conjunction with HttpURLConnection networking
      * @param in
      * @return Converts the Byte Array to String
-     * @author jailad
      */
 
 	private String readStream(InputStream in) {

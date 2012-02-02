@@ -8,6 +8,11 @@ import android.widget.Toast;
 
 import com.thejspace.www.framework.CustomApplication;
 
+/**
+ * BaseActivity: Provides baseline functionality for all the activities within the Application
+ * @author jailad
+ */
+
 public class BaseActivity extends Activity {
 		
 	private static final int ABOUT_ID = 0;
@@ -15,8 +20,6 @@ public class BaseActivity extends Activity {
 		
 	/** {@inheritDoc} */
 	protected void onCreate(final Bundle savedInstanceState) {
-
-	    // /** LOG DISABLED  System.out.println("*************** "+this.getClass().getSimpleName()+", called onCreate()");  **/
 
 		super.onCreate(savedInstanceState);
 		CustomApplication app = (CustomApplication) this.getApplication();
@@ -29,7 +32,7 @@ public class BaseActivity extends Activity {
 	      menu.add(0, ABOUT_ID, 0, "ABOUT");
 	      menu.add(0, REFRESH_ID, 0, "REFRESH").setCheckable(true);
 	      return super.onCreateOptionsMenu(menu);
-	 }
+	}
 	
 	@Override 
 	public boolean onOptionsItemSelected(MenuItem item) 
